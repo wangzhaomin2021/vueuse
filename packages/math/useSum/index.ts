@@ -13,5 +13,6 @@ export function useSum(...args: MaybeComputedRef<number>[]): ComputedRef<number>
  * @see https://vueuse.org/useSum
  */
 export function useSum(...args: MaybeComputedRefArgs<number>): ComputedRef<number> {
+  // resolveUnrefArgsFlat 有一层展开数组
   return computed(() => resolveUnrefArgsFlat(args).reduce((sum, v) => sum += v, 0))
 }
